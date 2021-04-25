@@ -96,5 +96,6 @@ void kernal_main_func()
     put_s("Hallo, Welt!");
     for (;;)
     {
+        put_c((row * VGA_COLS) + col);
     }
 }
