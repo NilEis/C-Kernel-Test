@@ -1,5 +1,6 @@
 #include <stddef.h>
 #include <stdint.h>
+#include "header/k_string.h"
 
 #if defined(__linux__)
 #error "This code must be compiled with a cross-compiler"
@@ -18,6 +19,8 @@ volatile uint16_t *vga_buffer = (uint16_t *)0xB8000;
 // - C is the ASCII character
 const int VGA_COLS = 80;
 const int VGA_ROWS = 25;
+
+int asm_test();
 
 enum vga_color
 {
@@ -93,9 +96,10 @@ void kernal_main_func()
 {
     clear_term();
 
-    put_s("Hallo, Welt!");
+    put_s("Hello, World!\n");
+    put_c('0'+k_strlen("Test"));
     for (;;)
     {
-        put_c((row * VGA_COLS) + col);
+        //put_c((row * VGA_COLS) + col);
     }
 }

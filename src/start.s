@@ -1,5 +1,6 @@
 .extern kernal_main_func //kernal_main_func in C
 .global start
+.global asm_test
 
 // Our bootloader, GRUB, needs to know some basic information about our kernel before it can boot it.
 // We give GRUB this information using a standard known as 'Multiboot'.
@@ -34,3 +35,7 @@
             cli //Clear interrupt flag
             hlt //Stop CPU
             jmp exit
+
+	asm_test:
+		mov $'S', %eax
+		ret
