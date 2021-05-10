@@ -1,8 +1,6 @@
 # C-Kernel-Test
  ## Build Kernel
- ```bash
-make [rebuild]
- ```
+The kernel can be created with the `make` command
 ## Run Kernel
 ```bash
 make run
